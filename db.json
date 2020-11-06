@@ -1,0 +1,90 @@
+{
+    "applicants": [
+        {
+            "firstName": "Friedrich",
+            "lastName": "Heinrich",
+            "phoneNo": "01 234 23425",
+            "email": "friedrich.heinrich@gmail.com",
+            "status": "appointment_set",
+            "statusDetails": {
+                "appointment": "appointment 22 july 2020"
+            }
+        },
+        {
+            "firstName": "Hans",
+            "lastName": "Ulrich",
+            "phoneNo": "01 234 23425",
+            "email": "hans.ulrich@gmail.com",
+            "status": "appointment_set",
+            "statusDetails": {
+                "appointment": "appointment 24 july 2020"
+            }
+        },
+        {
+            "firstName": "Karlheinz",
+            "lastName": "Brandenburg",
+            "phoneNo": "01 234 23425",
+            "email": "k2020@gmail.com",
+            "status": "appointment_set",
+            "statusDetails": {
+                "appointment": "appointment 22 april 2020"
+            }
+        },
+        {
+            "firstName": "Maximillian",
+            "lastName": "Mustermann",
+            "phoneNo": "01 234 23425",
+            "email": "max.muster@gmail.com",
+            "status": "property_viewed",
+            "statusDetails": {
+                "appointment": "viewed 22 july 2020",
+                "bid": "250,000€"
+            }
+        },
+        {
+            "firstName": "Bernard",
+            "lastName": "Weiß",
+            "phoneNo": "01 234 23425",
+            "email": "b.weiß@gmail.com",
+            "status": "property_viewed",
+            "statusDetails": {
+                "appointment": "viewed 24 july 2020",
+                "bid": "250,000€"
+            }
+        },
+        {
+            "firstName": "Jorg",
+            "lastName": "Felmy",
+            "phoneNo": "01 234 23425",
+            "email": "trump2020@gmail.com",
+            "status": "property_viewed",
+            "statusDetails": {
+                "appointment": "viewed 22 august 2020",
+                "bid": "250,000€"
+            }
+        },
+        {
+            "firstName": "John",
+            "lastName": "Smith",
+            "phoneNo": "01 234 23425",
+            "email": "s2021@gmail.com",
+            "status": "interested",
+            "statusDetails": {
+                "appointment": "viewed 22 august 2020",
+                "bid": "250,000€"
+            }
+        },
+        {
+            "firstName": "Jane",
+            "lastName": "Doe",
+            "phoneNo": "01 234 23425",
+            "email": "j2022@gmail.com",
+            "status": "interested",
+            "statusDetails": {
+                "appointment": "viewed 22 august 2020",
+                "bid": "250,000€"
+            }
+        }
+        
+    ]
+}

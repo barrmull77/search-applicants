@@ -1,0 +1,537 @@
+//Font
+$appFontFamily: 'roboto', san serif;
+
+//Colors
+$bgColor: #F8F8F8;
+$textcolor: #ebcccc;
+$black:#000;
+$white:#fff;
+$borderGrey: #EFEFEF;
+$lightGrey: #E6E6E6;
+$mediumBlueGrey: #80868B;
+$mediumGrey: #9D9D9D;
+$darkGrey: #4A4A4A;
+
+$lightBeige: #FEE8D3;
+$Orange: #E97428;
+$Violet: #E3E7F9;
+$Purple: #405493;
+$lightTurquoise: #CEF0F4;
+$darkTurquoise: #20ADC5;
+$lightGreen: #F0F4E1;
+$darkBeige: #ACAF36;
+$yellow: #FEB902;
+
+//Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-tablet-l: 992px;
+
+//mixins
+@mixin font($family, $size, $weight, $color) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin colorCircle($textColor, $bgColor) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    color: $textColor;
+    background-color: $bgColor;
+}
+
+//Modifers
+.is-orange-circle {
+    @include colorCircle($lightBeige, $Orange)
+}
+
+.is-purple-circle {
+    @include colorCircle($Violet, $Purple)
+}
+
+.is-turquoise-circle {
+    @include colorCircle($lightTurquoise, $darkTurquoise)
+}
+
+.is-green-circle {
+    @include colorCircle($lightGrey, $darkBeige)
+}
+
+/**
+* Global styles
+*/
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: $bgColor;
+    font-family: $appFontFamily;
+}
+
+p {
+    color: $textcolor;
+}
+
+a {
+    &:hover {
+        color: none;
+    }
+}
+
+.main-container {
+    background-color: $white;
+    box-shadow: 10px 24px 31px 17px rgba(0, 0, 0, 0.06);
+}
+
+.section__container {
+    margin: 18px 0;
+    padding-bottom: 80px;
+
+    @media (min-width: $bp-mobile) {
+        margin: 24px 0;
+        padding-bottom: 4px;
+    }
+}
+
+.applicants__message {
+    @include font( $appFontFamily, 16px, 700, $darkGrey);
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+* Components
+*/ 
+
+/*
+* Header
+*/
+.header__inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 55px;
+
+    @media (min-width: $bp-mobile) {
+        height: 80px;
+    }
+}
+
+.header__right-col {
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    align-content: center;
+    margin-right: 13px;
+}
+
+.header__logo {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        height: 15px;
+        width: 100%;
+    }
+
+    @media (min-width: $bp-mobile) {
+        margin: auto auto auto 24px;
+
+        img {
+            height: 22px;
+        }
+    }
+}
+
+.header__burger-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 13px;
+    padding: 0;
+    height: 24px;
+    width: 24px;
+    border: none;
+    background: none;
+
+    @media (min-width: $bp-mobile) {
+        margin: auto 8px;
+    }
+}
+
+.header__burger-icon {
+    position: relative;
+    display: block;
+    height: 2px;
+    width: 18px;
+    cursor: pointer;
+    background-color: $black;
+    border: none;
+    overflow: none;
+
+    @media (min-width: $bp-mobile) {
+        width: 24px;
+    }
+
+    &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        top: 4px;
+        left: 0;
+        height: 2px;
+        width: 18px;
+        background-color: $black;
+
+        @media (min-width: $bp-mobile) {
+            top: 6px;
+            width: 24px;
+        }
+    }
+
+    &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        bottom: 4px;
+        left: 0;
+        height: 2px;
+        width: 18px;
+        background-color: $black;
+
+        @media (min-width: $bp-mobile) {
+            bottom: 6px;
+            width: 24px;
+        }
+    }
+}
+
+.header__contact-support {
+    display: none;
+    margin-right: 38px;
+
+    @media (min-width: $bp-mobile) {
+        display: flex;
+    }
+}
+
+.header__chat {
+    display: flex;
+
+    @media (min-width: $bp-mobile) {
+        margin-right: 38px;
+    }
+}
+
+.header__contact-text {
+    @include font( $appFontFamily, 16px, 700, $darkGrey);
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    line-height: 24px;
+}
+
+.header__account {
+    display: none;
+    margin-right: 38px;
+
+    @media (min-width: $bp-mobile) {
+        display: flex;
+    }
+}
+
+.header__switch {
+    display: none;
+
+    @media (min-width: $bp-mobile) {
+        display: flex;
+    }
+}
+
+
+/*
+* Search bar
+*/
+
+.search-bar__details {
+    display: flex;
+    align-items: center;
+    padding: 24px 0;
+
+    @media (min-width: $bp-mobile) {
+        padding: 32px 24px;
+    }
+}
+
+.search-bar__details-back-link {
+    height: 24px;
+    width: 24px;
+}
+
+.search-bar__title {
+    @include font($appFontFamily, 20px, 700, $darkGrey );
+    margin: 0 16px;
+    line-height: 24px;
+
+    @media (min-width: $bp-mobile) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.search-bar__details-list {
+    display: none;
+    margin-left: auto;
+    list-style: none;
+
+    @media (min-width: $bp-tablet-l) {
+        display: flex;
+    }
+}
+
+.search-bar__details-list-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 110px;
+
+    &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        top: -2px;
+        right: 0;
+        height: calc(100% + 2px);
+        width: 1px;
+        background-color: $lightGrey;
+    }
+
+    &:last-child {
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.search-bar__details-list-number {
+    @include font($appFontFamily, 20px, 700, $darkGrey );
+    line-height: 24px;
+}
+
+.search-bar__details-list-text {
+    @include font($appFontFamily, 14px, 400, $darkGrey );
+    line-height: 20px;
+}
+
+.search-bar__input-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    
+    @media (min-width: $bp-mobile) {
+        flex-direction: row;
+        padding: 0 24px;
+    }
+}
+
+.search-bar__search-container {
+    width: 100%;
+    margin-bottom: 16px;
+    
+    @media (min-width: $bp-mobile) {
+        width: auto;
+        margin-bottom: 0;
+    }
+}
+
+.search-bar__search-input {
+    height: 45px;
+    
+    input.search {
+        padding-left: 42px;
+        padding-right: 20px;
+
+        &::placeholder {
+            @include font($appFontFamily, 16px, 400, $mediumGrey);
+            line-height: 20px;
+        }
+    }
+   
+    @media (min-width: $bp-mobile) {
+        margin-right: 24px;
+    }
+}
+
+.search-bar__search-icon {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+
+.search-bar__dropdown-container {
+    display: flex;
+    margin-right: auto;
+
+    @media (min-width: $bp-mobile) {
+        margin-right: 0;
+    }    
+}
+
+.search-bar__dropdown-input {
+    margin-right: 0;
+    margin-bottom: 0;
+
+    &.ui.menu {
+        margin: 0 8px 0 0;
+        height: 45px;
+        box-shadow: none;
+    }
+
+    .ui.input.item {
+        &:before,
+        &:after {
+            content: none;
+        }
+    }
+}
+
+.search-bar__dropdown-icon {
+    color: $darkGrey
+}
+
+.search-bar__dropdown-text {
+    @include font($appFontFamily, 14px, 400, $darkGrey);
+    line-height: 20px;
+}
+
+/*
+* Applicant List
+*/
+
+.applicant-list__container {
+    margin-bottom: 24px;
+
+    @media (min-width: $bp-mobile) {
+        padding: 0 24px;
+    }
+}
+
+.applicant-list__title {
+    @include font($appFontFamily, 20px, 700, $darkGrey);
+    margin-bottom: 20px;
+}
+
+/**
+* Applicant Row
+*/
+.applicant-row__applicant-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+    border: 1px solid $borderGrey;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.applicant-card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.applicant-card__name {
+    @include font($appFontFamily, 16px, 700, $darkGrey);
+    line-height: 24px;
+}
+
+.applicant-card__phone {
+    @include font($appFontFamily, 16px, 400, $darkGrey);
+    line-height: 24px;
+}
+
+.applicant-card__email {
+    @include font($appFontFamily, 16px, 400, $darkGrey);
+    line-height: 24px;
+}
+
+.applicant-card__appointment {
+    @include font($appFontFamily, 12px, 400, $white);
+    background-color: $mediumGrey;
+    border-radius: 3px;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    line-height: 12px;
+}
+
+.applicant-card__bid {
+    @include font($appFontFamily, 12px, 400, $white);
+    margin-top: 8px;
+    background-color: $yellow;
+    border-radius: 3px;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    line-height: 12px;
+}
+
+/**
+*   Footer
+*/ 
+
+.footer__list {
+    @include font($appFontFamily, 14px, 400, $darkGrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+
+    li {
+        position: relative;
+        display: flex;
+        margin-right: 10px;
+
+        &:after {
+            position: absolute;
+            right: -6px;
+            bottom: 9px;
+            display: block;
+            content: '';
+            border-radius: 50%;
+            height: 3px;
+            width: 3px;
+            background-color: $darkGrey;
+        }
+
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+/*
+* React multi carousel
+*/
+.react-multi-carousel-item{
+    padding: 0 12px;
+}
+
